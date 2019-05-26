@@ -1,0 +1,52 @@
+<h3>{{ formName }} Employee</h3>
+<form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+  <div class="example-container">
+    <div *ngIf="isEnable">
+      <mat-form-field>
+        <input matInput placeholder="Id" formControlName="id" required />
+        <mat-error *ngIf="employeeForm.controls['id'].errors"
+          >Enter id</mat-error
+        >
+      </mat-form-field>
+    </div>
+    <mat-form-field>
+      <input matInput placeholder="Name" formControlName="name" required />
+      <mat-error *ngIf="employeeForm.controls['name'].errors"
+        >Enter name</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="Email"
+        type="email"
+        formControlName="email"
+        required
+      />
+      <mat-error *ngIf="employeeForm.controls['email'].errors"
+        >Enter Email</mat-error
+      >
+    </mat-form-field>
+
+    <label>Choose gender </label>
+    <mat-radio-group formControlName="gender">
+      <mat-radio-button value="Male">Male</mat-radio-button>
+      <mat-radio-button value="Female">Female</mat-radio-button>
+    </mat-radio-group>
+
+    <mat-form-field>
+      <input matInput placeholder="DOB" formControlName="dob" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Department" formControlName="department" />
+    </mat-form-field>
+  </div>
+  <div *ngIf="formName === 'Create'">
+    <button mat-raised-button color="primary" type="submit">Create</button>
+  </div>
+  <div *ngIf="formName === 'Edit'">
+    <button mat-raised-button color="primary" type="submit">Update</button>
+  </div>
+</form>

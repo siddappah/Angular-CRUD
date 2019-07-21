@@ -3,6 +3,7 @@ import { Employee } from "../models/employee.models";
 import { EmployeeService } from "../employee.service";
 import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
 import { WarningAlertComponent } from "../warning-alert/warning-alert.component";
+import { Subscription } from 'rxjs';
 // export interface PeriodicElement {
 //   name: string;
 //   position: number;
@@ -31,6 +32,7 @@ import { WarningAlertComponent } from "../warning-alert/warning-alert.component"
 export class ListEmployeesComponent implements OnInit {
   employees: Employee[];
   modalRef: BsModalRef;
+  loginProfile: any;
   displayedColumns: string[] = [
     "id",
     "name",
@@ -39,6 +41,9 @@ export class ListEmployeesComponent implements OnInit {
     "dob",
     "status"
   ];
+  isLoading: boolean;
+  userData: Subscription;
+  loginData: any;
 
   constructor(
     private employeeService: EmployeeService,
@@ -46,15 +51,30 @@ export class ListEmployeesComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.isLoading = true;
+    // this.loginProfile = this.employeeService.getLoginInformation();
+    // console.log("---LOGIN-----", this.loginProfile);
+    this.userData = this.employeeService
+      .getLoginData()
+      .subscribe((loginInfo: any) => {
+        this.loginData = loginInfo;
+      });
+
     this.employeeService.getEmployees().subscribe(
       (data: any) => {
         // console.log(data);
         this.employees = data;
+        this.isLoading = false;
       },
       err => {
         console.log(err);
+        this.isLoading = false;
       }
     );
+  }
+  ngOnDestroy() {
+    //Close the Observable stream
+    this.userData.unsubscribe();
   }
   deleteEmployee(id: string) {
     this.modalRef = this.modalService.show(WarningAlertComponent);

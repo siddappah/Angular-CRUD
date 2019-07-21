@@ -1,5 +1,6 @@
 <div class="modal-header">
-  <h4 class="modal-title pull-left">Delete Employee?</h4>
+<!--  pull-left if requerd add in modal-title class -->
+  <h4 class="modal-title">Delete Employee?</h4>
   <button
     type="button"
     class="close pull-right"
@@ -11,9 +12,9 @@
 </div>
 <div class="modal-body text-center">
   <p>Are you sure, you want to delete ?</p>
-  <button type="button" class="btn btn-default" (click)="confirm()">
+  <button type="button" class="btn btn-success" (click)="confirm()">
     Confirm
-  </button>
+  </button>&nbsp;
   <button type="button" class="btn btn-primary" (click)="decline()">
     Cancel
   </button>

@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Siddu H",
+    "email": "siddu@gmail.com",
+    "password": "102030",
+    "gender": "Male",
+    "_id": "63360dec21084dcab975cb04b3579976"
+  },
+  {
+    "name": "depal",
+    "email": "depalreddy@gamil.com",
+    "password": "12345",
+    "gender": "Male",
+    "_id": "212b9929de8f4f2bbb4e8d49b98567cd"
+  },
+  {
+    "name": "vini",
+    "email": "vini@gmail.com",
+    "password": "12345",
+    "gender": "Male",
+    "_id": "c0db6fb597174b8c8bda674a26046c72"
+  },
+  {
+    "name": "depal",
+    "email": "depal@gamil.com",
+    "password": "12356",
+    "gender": "Male",
+    "_id": "875498dfdae643149741bf0952e6669c"
+  },
+  {
+    "name": "de",
+    "email": "de@gamil.com",
+    "password": "12345",
+    "gender": "Male",
+    "_id": "def9ffa7d7f843c88cf246af3d487c17"
+  },
+  {
+    "name": "dr",
+    "email": "dr@gmail.com",
+    "password": "123456",
+    "gender": "Male",
+    "_id": "950d4b1556a145988fe77579e496f37f"
+  },
+  {
+    "name": "dr",
+    "email": "dr@gmail.com",
+    "password": "123456",
+    "gender": "Male",
+    "_id": "fb383a3ed4e64bff97e7067b76cd9208"
+  }
+]

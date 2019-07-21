@@ -1,19 +1,8 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { ModalModule } from "ngx-bootstrap";
-import {
-  MatButtonModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatRadioModule,
-  MatToolbarModule,
-  MatSidenavModule,
-  MatIconModule,
-  MatListModule,
-  MatTableModule
-} from "@angular/material";
 
 import { AppComponent } from "./app.component";
 import { ListEmployeesComponent } from "./list-employees/list-employees.component";
@@ -25,6 +14,26 @@ import { EmployeeDetailsComponent } from "./employee-details/employee-details.co
 import { NavigationComponent } from "./navigation/navigation.component";
 import { LayoutModule } from "@angular/cdk/layout";
 import { WarningAlertComponent } from "./warning-alert/warning-alert.component";
+import {
+  MatButtonModule,
+  MatFormFieldModule,
+  MatRadioModule,
+  MatInputModule,
+  MatToolbarModule,
+  MatSidenavModule,
+  MatIconModule,
+  MatListModule,
+  MatTableModule,
+  MatSelectModule,
+  MatCardModule,
+  MatProgressSpinnerModule
+} from "@angular/material";
+import { AddressComponent } from "./address/address.component";
+import { ParentComponent } from "./parent/parent.component";
+import { ChildComponent } from "./child/child.component";
+import { RegisterComponent } from "./register/register.component";
+import { LoginComponent } from "./login/login.component";
+import { HttpErrorInterceptor } from "./http-error.interceptor";
 
 @NgModule({
   declarations: [
@@ -33,7 +42,12 @@ import { WarningAlertComponent } from "./warning-alert/warning-alert.component";
     CreateEmployeeComponent,
     EmployeeDetailsComponent,
     NavigationComponent,
-    WarningAlertComponent
+    WarningAlertComponent,
+    AddressComponent,
+    ParentComponent,
+    ChildComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -52,9 +66,20 @@ import { WarningAlertComponent } from "./warning-alert/warning-alert.component";
     MatIconModule,
     MatListModule,
     MatTableModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    MatSelectModule,
+    MatCardModule,
+    MatProgressSpinnerModule
   ],
-  providers: [EmployeeService],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true
+    }
+  ],
+  // providers: [EmployeeService],
+  // exports:[],
   bootstrap: [AppComponent],
   entryComponents: [WarningAlertComponent]
 })

@@ -1,11 +1,1 @@
-[
-  {
-    "id": "1",
-    "name": "Depalreddy",
-    "email": "depal@gmail.com",
-    "gender": "Male",
-    "dob": "10/11/1994",
-    "department": "Royal mech",
-    "_id": "60f97214bab34661b0c3cb7dd33dbbcf"
-  }
-]
+[{"id":"1","name":"Siddu H","email":"siddu@gmail.com","gender":"Male","dob":"11/06/1988","department":"EC","_id":"61beaef27a2c4f3985ff13baa47c0300"},{"id":"2","name":"Depal","email":"siddu@gmail.com","gender":"Female","dob":"","department":"","_id":"61beaef27a2c4f3985ff13baa47c0300"},{"id":"3","name":"Vini","email":"siddu@gmail.com","gender":"Male","dob":"","department":"","_id":"61beaef27a2c4f3985ff13baa47c0300"},{"id":"4","name":"Jogi","email":"siddu@gmail.com","gender":"Male","dob":"","department":"","_id":"61beaef27a2c4f3985ff13baa47c0300"},{"id":"5","name":"Raj","email":"siddu@gmail.com","gender":"Male","dob":"","department":"","_id":"61beaef27a2c4f3985ff13baa47c0300"}]

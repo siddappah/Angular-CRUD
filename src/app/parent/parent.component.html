@@ -1,0 +1,10 @@
+<!-- parent to child -->
+<!-- <p>
+  parent works!
+</p>
+<app-child [messageToChild]="messageFromParent"></app-child> -->
+
+<!-- child to parent -->
+<P *ngIf="message">this message from child <span class="testing">{{ message }}</span></P>
+<app-child (messageEvent)=" receiveMessage($event)"></app-child>
+<!-- <p>Birthday is {{ birthday | date | uppercase }}</p> -->

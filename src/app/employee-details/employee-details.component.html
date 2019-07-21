@@ -1,25 +1,29 @@
-<h3>Employee Details</h3>
-<div class="row">
-  <div class="col">Id</div>
-  <div class="col">{{ employeeDetails.id }}</div>
-</div>
-<div class="row">
-  <div class="col">Name</div>
-  <div class="col">{{ employeeDetails.name }}</div>
-</div>
-<div class="row">
-  <div class="col">Email</div>
-  <div class="col">{{ employeeDetails.email }}</div>
-</div>
-<div class="row">
-  <div class="col">Gender</div>
-  <div class="col">{{ employeeDetails.gender }}</div>
-</div>
-<div class="row">
-  <div class="col">DOB</div>
-  <div class="col">{{ employeeDetails.dob }}</div>
-</div>
-<div class="row">
-  <div class="col">Department</div>
-  <div class="col">{{ employeeDetails.department }}</div>
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+
+<div *ngIf="!isLoading">
+  <h3>Employee Details</h3>
+  <div class="row">
+    <div class="col">Id</div>
+    <div class="col">{{ employeeDetails.id }}</div>
+  </div>
+  <div class="row">
+    <div class="col">Name</div>
+    <div class="col">{{ employeeDetails.name }}</div>
+  </div>
+  <div class="row">
+    <div class="col">Email</div>
+    <div class="col">{{ employeeDetails.email }}</div>
+  </div>
+  <div class="row">
+    <div class="col">Gender</div>
+    <div class="col">{{ employeeDetails.gender }}</div>
+  </div>
+  <div class="row">
+    <div class="col">DOB</div>
+    <div class="col">{{ employeeDetails.dob }}</div>
+  </div>
+  <div class="row">
+    <div class="col">Department</div>
+    <div class="col">{{ employeeDetails.department }}</div>
+  </div>
 </div>

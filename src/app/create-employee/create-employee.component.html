@@ -24,9 +24,12 @@
         formControlName="email"
         required
       />
-      <mat-error *ngIf="employeeForm.controls['email'].errors"
+      <mat-error *ngIf="employeeForm.controls['email'].hasError('required')"
         >Enter Email</mat-error
       >
+      <mat-error *ngIf="employeeForm.controls['email'].hasError('email')"
+      >Enter Valid Email</mat-error
+    >
     </mat-form-field>
 
     <label>Choose gender </label>

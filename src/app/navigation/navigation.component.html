@@ -13,10 +13,21 @@
         mat-list-item
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
-          routerLink=""
+        routerLink=""
         >List</a
       >
       <a mat-list-item routerLinkActive="active" routerLink="create">Create</a>
+      <a mat-list-item routerLinkActive="active" routerLink="address"
+        >Address</a
+      >
+      <a mat-list-item routerLinkActive="active" routerLink="parent"
+        >Parent to child</a
+      >
+      <a mat-list-item routerLinkActive="active" routerLink="register"
+        >Register</a
+      >
+
+      <a mat-list-item routerLinkActive="active" routerLink="login">Login</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -30,7 +41,8 @@
       >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Employee</span>
+      <span>Employee: </span> &nbsp;
+      <span> {{ loginData?.name }}</span>
     </mat-toolbar>
     <!-- Add Content Here -->
     <div class="m-4">

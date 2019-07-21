@@ -79,7 +79,8 @@ export class CreateEmployeeComponent implements OnInit {
       );
     } else {
       // Create an employee
-      this.employeeService.createEmployee(this.employeeForm.value).subscribe(
+      this.employeeService.createEmployee(this.employeeForm.value)
+      .subscribe(
         (data: any) => {
           console.log(data);
           this.router.navigate([""]);

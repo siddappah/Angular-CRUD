@@ -1,0 +1,59 @@
+<form #newUserForm="ngForm" (ngSubmit)="onSubmit(newUserForm)">
+  <mat-card class="example-card w-50">
+    <h3>Login form</h3>
+    <p class="error-message" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <mat-card-content class="login-container">
+      <mat-form-field class="example-full-width">
+        <input
+          matInput
+          type="text"
+          placeholder="Email"
+          [(ngModel)]="email"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+          name="email"
+          required
+          #userEmail="ngModel"
+        />
+        <mat-error *ngIf="userEmail.invalid && userEmail.touched">
+          <mat-error *ngIf="userEmail.errors?.required">
+            Enter email address
+          </mat-error>
+          <mat-error *ngIf="userEmail.errors?.pattern">
+            Mention valid email address
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input
+          matInput
+          type="password"
+          placeholder="Password"
+          required
+          [(ngModel)]="password"
+          name="password"
+          #userPassword="ngModel"
+        />
+        <mat-error *ngIf="!userPassword.valid && userPassword.touched">
+          Password is required!
+        </mat-error>
+      </mat-form-field>
+    </mat-card-content>
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="!newUserForm.form.valid"
+    >
+      Register
+    </button>&nbsp;
+    <button
+      mat-raised-button
+      color="primary"
+      type="button"
+      (click)="newUserForm.reset()"
+    >
+      Reset
+    </button>
+  </mat-card>
+</form>
